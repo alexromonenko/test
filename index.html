@@ -3,7 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website</title>
+    <title>World Cup Bot</title>
+     <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .popup h2 {
+      margin-bottom: 10px;
+    }
+
+    .popup button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .popup button:hover {
+      background: #0056b3;
+    }
+  </style>
 </head>
 <body>
     <iframe
@@ -12,5 +57,29 @@
  frameborder="0"
  allow="microphone">
 </iframe>
+
+    <div class="overlay" id="overlay">
+  <div class="popup">
+    <h2>⚽ World Cup AI Bot</h2>
+    <p>
+      Этот бот помогает находить информацию о футболистах,
+      составах команд и статистике FIFA World Cup 2026.
+    </p>
+    <p>Вы можете спрашивать про игроков, команды и их данные.</p>
+
+    <button onclick="closePopup()">Понятно</button>
+  </div>
+</div>
+
+<script>
+  window.onload = function () {
+    document.getElementById("overlay").style.display = "flex";
+  };
+
+  function closePopup() {
+    document.getElementById("overlay").style.display = "none";
+  }
+</script>
+
 </body>
 </html>
